@@ -1,12 +1,12 @@
 import React from "react";
-import industrytabimage1 from "../../assets/industrytabimage1.png";
-import industrytabimage2 from "../../assets/industrytabimage2.png";
-import industrytabimage3 from "../../assets/industrytabimage3.png";
-import industrytabimage4 from "../../assets/industrytabimage4.png";
-import industrytabimage5 from "../../assets/industrytabimage5.png";
-import industrytabimage6 from "../../assets/industrytabimage6.png";
-import industrytabimage7 from "../../assets/industrytabimage7.png";
-import industrytabimage8 from "../../assets/industrytabimage8.png";
+import industrytabimage1 from "../../assets/oilpump.svg";
+import industrytabimage2 from "../../assets/thunderbolt.svg";
+import industrytabimage3 from "../../assets/rpa.svg";
+import industrytabimage4 from "../../assets/supply-chain.svg";
+import industrytabimage5 from "../../assets/e-business.svg";
+import industrytabimage6 from "../../assets/health.svg";
+import industrytabimage7 from "../../assets/technology.svg";
+import industrytabimage8 from "../../assets/telecommunication.svg";
 
 export const Outcome1 = () => {
   return (
@@ -15,7 +15,7 @@ export const Outcome1 = () => {
         <img
           src={industrytabimage1}
           alt="Industry Tab 1"
-          className="w-[50px] h-[50px]"
+          className="w-[55px] h-[55px]"
         />
       </div>
       <p className="font-onest text-[20px] font-medium leading-[130%] tracking-[-0.03em] text-white text-center max-w-[131px]">

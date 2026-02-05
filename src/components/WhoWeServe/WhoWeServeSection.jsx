@@ -1,18 +1,18 @@
-import React from "react";
+import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import * as Outcomes from "./Outcomes";
 
 const WhoWeServeSection = () => {
-  const [active, setActive] = React.useState(1);
-  const panelsRef = React.useRef([]);
+  const [active, setActive] = useState(1);
+  const panelsRef = useRef([]);
 
   // initial visible panel
-  React.useEffect(() => {
+  useEffect(() => {
     gsap.set(panelsRef.current[0], { opacity: 1 });
   }, []);
 
   // animate on tab change
-  React.useEffect(() => {
+  useEffect(() => {
     const currentIndex = active - 1;
 
     panelsRef.current.forEach((panel, i) => {
@@ -51,6 +51,14 @@ const WhoWeServeSection = () => {
       }
     });
   }, [active]);
+  // auto change tabs every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((prev) => (prev === tabs.length ? 1 : prev + 1));
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="flex flex-col py-20 px-20 items-center justify-center gap-5">

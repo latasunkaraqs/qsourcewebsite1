@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import footerLogo from "../../assets/footerLogo.png";
-import topArrow from "../../assets/topArrow.png";
-import Facebook from "../../assets/Facebook.png";
-import Twitter from "../../assets/Twitter.png";
-import Youtube from "../../assets/Youtube.png";
-import Instagram from "../../assets/Instagram.png";
+import footerLogo from "../../assets/leftLogo.svg";
+import topArrow from "../../assets/topArrow.svg";
+import Facebook from "../../assets/Facebook.svg";
+import Twitter from "../../assets/Twitter.svg";
+import Youtube from "../../assets/Youtube.svg";
+import Instagram from "../../assets/Instagram.svg";
 
 const Footer = () => {
   const [showTopArrow, setShowTopArrow] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 300) {
@@ -38,7 +39,7 @@ const Footer = () => {
       <div className="w-full pt-[38px] px-[20px] pb-[72px] md:px-[75px] flex flex-col md:flex-row gap-6 md:gap-0 items-start">
         {/* Left section — Company branding + description */}
         <div className="w-full md:w-[40%] font-onest font-medium text-[16px] leading-[130%] tracking-[-0.03em] text-[#021933]">
-          <img src={footerLogo} alt="Qsource" className="w-[250px] h-[95px] " />
+          <img src={footerLogo} alt="Qsource" className="h-[95px]" />
           <p className="mt-2">
             Transform your challenges into triumphs
             <br />
@@ -62,10 +63,49 @@ const Footer = () => {
             hr@qsourcegroupinc.com
           </p>
           <div className="flex gap-5">
-            <img src={Facebook} alt="f" className="h-[24px] w-[24px]" />
-            <img src={Twitter} alt="t" className="h-[24px] w-[24px]" />
-            <img src={Instagram} alt="i" className="h-[24px] w-[24px]" />
-            <img src={Youtube} alt="y" className="h-[24px] w-[24px]" />
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={Facebook}
+                alt="Facebook"
+                className="h-[24px] w-[24px] cursor-pointer"
+              />
+            </a>
+
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+              <img
+                src={Twitter}
+                alt="Twitter"
+                className="h-[24px] w-[24px] cursor-pointer"
+              />
+            </a>
+
+            <a
+              href="https://www.instagram.com/?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={Instagram}
+                alt="Instagram"
+                className="h-[24px] w-[24px] cursor-pointer"
+              />
+            </a>
+
+            <a
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={Youtube}
+                alt="YouTube"
+                className="h-[24px] w-[24px] cursor-pointer"
+              />
+            </a>
           </div>
         </div>
 

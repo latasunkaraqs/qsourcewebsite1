@@ -1,4 +1,4 @@
-// import { useState } from 'react'
+import { useState, useEffect } from "react";
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import "./App.css";
@@ -13,13 +13,20 @@ import Differentiators from "./pages/Differentiators.jsx";
 import Contact from "./pages/Contact.jsx";
 import Header from "./components/Header/Header.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import Preloader from "./components/Preloader/Preloader.jsx";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-    {/* Persistent Layout */}
+      {/* Persistent Layout */}
       <Header />
-      <main>
+      <main className="pt-[91px]">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
@@ -33,6 +40,23 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      {loading && (
+        <Preloader
+          onDone={() => {
+            setLoading(false);
+
+            // Scroll to Top
+            window.scrollTo({ top: 0, behavior: "smooth" });
+
+            // refresh GSAP after layout mounts
+            setTimeout(() => {
+              if (window.ScrollTrigger) {
+                window.ScrollTrigger.refresh();
+              }
+            }, 50);
+          }}
+        />
+      )}
     </>
   );
 }

@@ -12,9 +12,10 @@ const ContactSection = () => {
       </h2>
       <button
         onClick={() => navigate("/contact")}
-        className="w-[210px] h-[45px] flex items-center justify-center gap-[10px] px-[20px] py-[10px] rounded-[50px] bg-[#021933] text-white hover:bg-[#0085F6] transition-colors duration-300 ease-in-out cursor-pointer overflow-hidden group hover:scale-105 duration-300"
+        className="relative w-[210px] h-[45px] mt-8 flex items-center justify-center gap-[10px] px-[20px] py-[10px] rounded-[50px] bg-[#021933] text-white hover:bg-[#0085F6] transition-all duration-300 ease-in-out cursor-pointer overflow-hidden group hover:scale-105"
       >
-        <span className="absolute inset-0 bg-white opacity-30 rotate-45 translate-x-[-100%] group-hover:translate-x-[100%] blur-sm transition-transform duration-700"></span>
+        <span className="pointer-events-none absolute inset-0 bg-white opacity-30 rotate-45 translate-x-[-100%] group-hover:translate-x-[100%] blur-sm transition-transform duration-700"></span>
+
         <span className="relative z-10 font-onest text-[19px] font-medium leading-[130%] tracking-[-0.05rem] text-white">
           Get in Touch
         </span>

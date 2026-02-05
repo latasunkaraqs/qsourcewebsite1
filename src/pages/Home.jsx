@@ -10,13 +10,40 @@ import ContactSection from "../components/Contact/ContactSection";
 const Home = () => {
   return (
     <div>
-      <HeroSection />
+      {/* Without Section Ids */}
+      {/* <HeroSection />
       <WhatWeDoSection />
       <WhatWeOfferSection />
       <WhoWeServeSection />
       <ValuesSection />
       <TrustSection />
-      <ContactSection />
+      <ContactSection /> */}
+
+      {/* With Section IDs */}
+      <section id="about">
+        <HeroSection />
+      </section>
+
+      <section id="services">
+        <WhatWeDoSection />
+      </section>
+
+      <section id="solutions">
+        <WhatWeOfferSection />
+      </section>
+
+      <section id="industries">
+        <WhoWeServeSection />
+      </section>
+
+      <section id="differentiators">
+        <ValuesSection />
+        <TrustSection />
+      </section>
+
+      <section id="contact">
+        <ContactSection />
+      </section>
     </div>
   );
 };

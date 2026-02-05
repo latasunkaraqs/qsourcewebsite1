@@ -8,3 +8,31 @@
 body {
   margin: 0;
 }
+
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  font-family: var(--font-onest);
+}
+
+@layer base {
+  html {
+    scroll-padding-top: 91px;
+    scroll-behavior: smooth;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spin-slow 2.5s linear infinite;
+}

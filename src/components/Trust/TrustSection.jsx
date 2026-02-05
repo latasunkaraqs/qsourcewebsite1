@@ -1,9 +1,9 @@
 import React from "react";
-import partnersImage from "../../assets/partners.png";
-import accredition1Image from "../../assets/accreditation1.png";
-import accredition2Image from "../../assets/accreditation2.png";
-import accredition3Image from "../../assets/accreditation3.png";
-import accredition4Image from "../../assets/accreditation4.png";
+import partnersImage from "../../assets/uipath.svg";
+import accredition1Image from "../../assets/womenowned.svg";
+import accredition2Image from "../../assets/nmsdc.svg";
+import accredition3Image from "../../assets/sbawosb.svg";
+import accredition4Image from "../../assets/hub.svg";
 
 const TrustSection = () => {
   return (
@@ -17,7 +17,7 @@ const TrustSection = () => {
           <img
             src={partnersImage}
             alt="Partners"
-            className="w-[175px] h-[57px]"
+            className="w-[175px] h-[57px] grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition duration-300 cursor-pointer"
           />
         </div>
       </div>
@@ -35,22 +35,22 @@ const TrustSection = () => {
             <img
               src={accredition1Image}
               alt="Accreditation1"
-              className="w-[117px] h-[66px]"
+              className="w-[117px] h-[66px] grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition duration-300 cursor-pointer"
             />
             <img
               src={accredition2Image}
               alt="Accreditation2"
-              className="w-[131px] h-[83px]"
+              className="w-[131px] h-[83px] grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition duration-300 cursor-pointer"
             />
             <img
               src={accredition3Image}
               alt="Accreditation3"
-              className="w-[224px] h-[65px]"
+              className="w-[224px] h-[65px] grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition duration-300 cursor-pointer"
             />
             <img
               src={accredition4Image}
               alt="Accreditation4"
-              className="w-[108px] h-[83px]"
+              className="w-[108px] h-[83px] grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition duration-300 cursor-pointer"
             />
           </div>
         </div>
