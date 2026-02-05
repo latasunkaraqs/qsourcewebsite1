@@ -1,0 +1,44 @@
+Element : IDs
+
+Big Circle : circle
+Small Circle (right) : circlesm1
+Small Circle (right) : circlesm2
+Small circle (left) : circlesm3
+
+Star (right) : star1
+Star (left) : star2
+tiny star (screen) : star3
+
+Asterisk like star : sun
+
+cloud+molecule : cloud
+
+black graph : graph
+
+piechart : piechart
+
+Computer : monitor
+screen user image: user
+screen piechart: pie
+screen target: target
+screen clock : clock
+
+people+background circle : people
+line connecting people: line1
+
+lock + background : lock
+line connecting lock: line2
+
+writing board + background : board
+line connecting writing board: line3
+
+magnifying glass : magnifier
+
+Paper elements from left to right:
+paper : paper
+shadow : papershadow1
+paper: paper1
+shadow: papershadow2
+paper: paper2
+end: paperend
+

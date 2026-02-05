@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import { useEffect } from "react";
+// import { useState, useEffect } from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound.jsx";
@@ -13,10 +12,10 @@ import Differentiators from "./pages/Differentiators.jsx";
 import Contact from "./pages/Contact.jsx";
 import Header from "./components/Header/Header.jsx";
 import Footer from "./components/Footer/Footer.jsx";
-import Preloader from "./components/Preloader/Preloader.jsx";
+// import Preloader from "./components/Preloader/Preloader.jsx";
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -40,7 +39,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-      {loading && (
+      {/* {loading && (
         <Preloader
           onDone={() => {
             setLoading(false);
@@ -56,7 +55,7 @@ function App() {
             }, 50);
           }}
         />
-      )}
+      )} */}
     </>
   );
 }

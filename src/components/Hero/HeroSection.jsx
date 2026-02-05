@@ -1,8 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { gsap } from "gsap";
+// import heroIllustration from "../../assets/heroIllustration.svg";
+import HeroIllustrationSVG from "../../assets/heroIllustration.svg?react";
 
 const HeroSection = () => {
   const navigate = useNavigate();
+  const svgWrapRef = useRef(null);
+
   const words = ["Reliable.", "Efficient.", "Scalable."];
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -18,9 +23,67 @@ const HeroSection = () => {
     }, 2000);
 
     return () => clearInterval(wordInterval);
+  }, [words.length]);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const svg = svgWrapRef.current?.querySelector("svg");
+      if (!svg) return;
+
+      const parts = svg.querySelectorAll("[id]:not(defs *)");
+
+      gsap.set(parts, {
+        transformBox: "fill-box",
+        transformOrigin: "50% 50%",
+      });
+
+      const tl = gsap.timeline({ delay: 0.3 });
+
+      // Scatter → assemble (random only here)
+      tl.from(parts, {
+        duration: 1.6,
+        x: () => gsap.utils.random(-900, 900),
+        y: () => gsap.utils.random(-700, 700),
+        rotation: () => gsap.utils.random(-180, 180),
+        scale: 0.2,
+        opacity: 0,
+        stagger: 0.05,
+        ease: "expo.out",
+      });
+
+      // small settle snap
+      tl.to(
+        parts,
+        {
+          scale: 1,
+          duration: 0.35,
+          ease: "back.out(2)",
+          stagger: 0.02,
+        },
+        "-=0.5",
+      );
+
+      // subtle tech vibration AFTER assemble
+      tl.add(() => {
+        parts.forEach((el, i) => {
+          gsap.to(el, {
+            x: "+=2",
+            y: "+=2",
+            duration: 1.8,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+            delay: i * 0.03, // phase offset — looks organic but stable
+          });
+        });
+      });
+    }, svgWrapRef);
+
+    return () => ctx.revert();
   }, []);
+
   return (
-    <div className="grid grid-cols-2 px-18 py-30">
+    <div className="grid md:grid-cols-2 grid-cols-1 px-18 py-30">
       <div>
         <h1 className="font-onest text-[71px] font-bold leading-[100%] tracking-[-0.03em] text-black">
           Build Enterprise Technology that stay{" "}
@@ -56,7 +119,17 @@ const HeroSection = () => {
           </span>
         </button>
       </div>
-      <div></div>
+      <div className="flex items-start justify-end">
+        {/* <img
+          src={heroIllustration}
+          alt="Animated Image"
+          className="h-[480px]"
+        /> */}
+        <div ref={svgWrapRef} className="flex items-start justify-end">
+          <HeroIllustrationSVG className="h-[480px] w-auto" />
+          
+        </div>
+      </div>
     </div>
   );
 };
