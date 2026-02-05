@@ -66,9 +66,13 @@ const HeroSection = () => {
       // subtle tech vibration AFTER assemble
       tl.add(() => {
         parts.forEach((el, i) => {
+          const dx = gsap.utils.random(-2, 2);
+          const dy = gsap.utils.random(-2, 2);
+          const rot = gsap.utils.random(-1, 1);
           gsap.to(el, {
-            x: "+=2",
-            y: "+=2",
+            x: dx,
+            y: dy,
+            rotation: rot,
             duration: 1.8,
             repeat: -1,
             yoyo: true,
@@ -126,8 +130,7 @@ const HeroSection = () => {
           className="h-[480px]"
         /> */}
         <div ref={svgWrapRef} className="flex items-start justify-end">
-          <HeroIllustrationSVG className="h-[480px] w-auto" />
-          
+          <HeroIllustrationSVG className="h-[480px] w-auto z-20" />
         </div>
       </div>
     </div>
