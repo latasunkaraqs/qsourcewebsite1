@@ -44,7 +44,7 @@ const ValuesSection = () => {
   return (
     <div
       ref={sectionRef}
-      className="w-full min-h-[700px] px-20 py-30 bg-[url('src/assets/valuesbg.png')] bg-cover bg-bottom"
+      className="w-full min-h-[700px] px-20 py-30 bg-[url('src/assets/valuesbg.svg')] bg-cover bg-bottom"
     >
       <div className="w-full flex flex-col justify-center items-center gap-20">
         {/* slower heading */}
@@ -57,7 +57,7 @@ const ValuesSection = () => {
           Built for Scale. Focused on Results.
         </h2>
 
-        <div className="flex items-center justify-center gap-30">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-20 md:gap-30">
           {values.map((value, index) => (
             <div
               key={index}

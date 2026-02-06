@@ -1,5 +1,5 @@
-// import { useLayoutEffect, useRef } from "react";
-import { useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
+// import { useRef } from "react";
 import HeroSection from "../components/Hero/HeroSection";
 import WhatWeDoSection from "../components/WhatWeDo/WhatWeDoSection";
 import WhatWeOfferSection from "../components/WhatWeOffer/WhatWeOfferSection";
@@ -7,48 +7,61 @@ import WhoWeServeSection from "../components/WhoWeServe/WhoWeServeSection";
 import ValuesSection from "../components/Values/ValuesSection";
 import TrustSection from "../components/Trust/TrustSection";
 import ContactSection from "../components/Contact/ContactSection";
-import SwigglyLineSVG from "../assets/swigglyLine.svg?react";
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SwigglyLineSVG from "../assets/swigglyLine1.svg?react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-// gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 // console.log("swigglyLine2", swigglyLine2);
 
 const Home = () => {
   const svgLineRef = useRef(null);
-  // useLayoutEffect(() => {
-  //   const ctx = gsap.context(() => {
-  //     const svg = svgLineRef.current;
-  //     if (!svg) return;
+  useLayoutEffect(() => {
+    gsap.to(window, {
+      scrollTo: 0,
+      duration: 0.6,
+      ease: "power2.out",
+    });
+  }, []);
 
-  //     const paths = svg.querySelectorAll("path, line, polyline");
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const svg = svgLineRef.current;
+      if (!svg) return;
 
-  //     paths.forEach((path) => {
-  //       const length = path.getTotalLength();
+      const path = svg.querySelector("path");
+      if (!path) return;
 
-  //       // hide line initially
-  //       gsap.set(path, {
-  //         strokeDasharray: length,
-  //         strokeDashoffset: length,
-  //       });
+      const length = path.getTotalLength();
 
-  //       // scroll scrub draw
-  //       gsap.to(path, {
-  //         strokeDashoffset: 0,
-  //         ease: "none",
-  //         scrollTrigger: {
-  //           trigger: svg,
-  //           start: "top 80%",
-  //           end: "bottom 30%",
-  //           scrub: true,
-  //         },
-  //       });
-  //     });
-  //   }, svgLineRef);
+      // hide line initially
+      gsap.set(path, {
+        strokeDasharray: length,
+      });
 
-  //   return () => ctx.revert();
-  // }, []);
+      // draw on scroll
+      gsap.fromTo(
+        path,
+        {
+          strokeDashoffset: length,
+        },
+        {
+          strokeDashoffset: 0,
+          duration: 2,
+          scrollTrigger: {
+            trigger: svgLineRef.current,
+            start: "top top",
+            end: `${length * 0.7}`,
+            scrub: 1,
+          },
+        },
+      );
+    }, svgLineRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <div className="relative">
@@ -89,7 +102,7 @@ const Home = () => {
 
       <SwigglyLineSVG
         ref={svgLineRef}
-        className="absolute -top-8 left-0 -z-10 w-full"
+        className="absolute top-15 left-0 -z-10 w-full"
       />
     </div>
   );

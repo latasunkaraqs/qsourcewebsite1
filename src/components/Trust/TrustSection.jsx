@@ -7,11 +7,11 @@ import accredition4Image from "../../assets/hub.svg";
 
 const TrustSection = () => {
   return (
-    <div className="flex px-[40px] py-[72px] gap-40 justify-center items-center">
+    <div className="flex flex-col lg:flex-row px-[40px] py-[72px] gap-40 justify-center items-center lg:items-start">
       {/* Partnership */}
-      <div className="flex justify-center gap-2">
-        <div className="flex flex-col gap-5">
-          <p className="font-onest text-[30px] font-medium leading-[100%] tracking-[-0.03em]">
+      <div className="flex gap-2">
+        <div className="flex flex-col gap-5 justify-start items-center lg:items-start">
+          <p className="font-onest text-[30px] font-medium leading-[100%] tracking-[-0.03em] text-center lg:text-left">
             Our Partnership
           </p>
           <img
@@ -23,15 +23,15 @@ const TrustSection = () => {
       </div>
 
       {/* Vertical Line*/}
-      <div className="w-[0.5px] h-[129px] bg-black"></div>
+      <div className="w-[0.5px] h-[129px] bg-black hidden lg:block"></div>
 
       {/* Accreditations */}
       <div className="flex flex-col">
-        <div className="flex flex-col gap-5">
-          <p className="font-onest text-[30px] font-medium leading-[100%] tracking-[-0.03em]">
+        <div className="flex flex-col gap-5 justify-center lg:justify-start">
+          <p className="font-onest text-[30px] font-medium leading-[100%] tracking-[-0.03em] text-center lg:text-left">
             Accreditations
           </p>
-          <div className="flex gap-10 items-center ">
+          <div className="flex flex-wrap gap-10 items-center justify-center lg:justify-start">
             <img
               src={accredition1Image}
               alt="Accreditation1"

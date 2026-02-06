@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
 // import heroIllustration from "../../assets/heroIllustration.svg";
 import HeroIllustrationSVG from "../../assets/heroIllustration.svg?react";
+import ContactModal from "../Contact/ContactModal";
 
 const HeroSection = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const svgWrapRef = useRef(null);
+  const [open, setOpen] = useState(false);
 
   const words = ["Reliable.", "Efficient.", "Scalable."];
   const [index, setIndex] = useState(0);
@@ -87,53 +89,60 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="grid md:grid-cols-2 grid-cols-1 px-18 py-30">
-      <div>
-        <h1 className="font-onest text-[71px] font-bold leading-[100%] tracking-[-0.03em] text-black">
-          Build Enterprise Technology that stay{" "}
-          <span
-            className={`inline-block min-w-[160px] text-[#0085F6] transition-all duration-300 ${
-              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-            }`}
-          >
-            {words[index]}
-          </span>
-          {/* Build <span className="text-[#0085F6]">Reliable</span> &
+    <>
+      <div className="grid lg:grid-cols-2 grid-cols-1 px-2 lg:gap-10 lg:px-18 lg:py-30">
+        <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start">
+          <h1 className="font-onest text-[60px] lg:text-[71px] font-bold leading-[120%] lg:leading-[100%] tracking-[-0.03em] text-black text-center lg:text-start">
+            Build Enterprise Technology that stay{" "}
+            <span
+              className={`inline-block min-w-[160px] text-[#0085F6] transition-all duration-300 ${
+                visible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-2"
+              }`}
+            >
+              {words[index]}
+            </span>
+            {/* Build <span className="text-[#0085F6]">Reliable</span> &
           <br />
           <span className="text-[#0085F6]">Scalable</span> Enterprise
           <br />
           Technology */}
-        </h1>
-        <p className="font-onest text-[19px] font-medium leading-[130%] tracking-[-0.05em] text-black mt-8 max-w-[540px]">
-          We design, modernize, and scale mission-critical systems with proven
-          architecture, security-first practices, and measurable performance
-          outcomes — so your business runs without disruption and grows without
-          limits.
-          {/* Transform your challenges into triumphs with our comprehensive IT
+          </h1>
+          <p className="font-onest text-[19px] font-medium leading-[130%] tracking-[-0.05em] text-black mt-8 max-w-[540px] text-center lg:text-start">
+            We design, modernize, and scale mission-critical systems with proven
+            architecture, security-first practices, and measurable performance
+            outcomes — so your business runs without disruption and grows
+            without limits.
+            {/* Transform your challenges into triumphs with our comprehensive IT
           solutions. Your success story begins with our expertise. */}
-        </p>
-        <button
-          onClick={() => navigate("/contact")}
-          className="relative w-[210px] h-[45px] mt-8 flex items-center justify-center gap-[10px] px-[20px] py-[10px] rounded-[50px] bg-[#021933] text-white hover:bg-[#0085F6] transition-all duration-300 ease-in-out cursor-pointer overflow-hidden group hover:scale-105"
-        >
-          <span className="pointer-events-none absolute inset-0 bg-white opacity-30 rotate-45 translate-x-[-100%] group-hover:translate-x-[100%] blur-sm transition-transform duration-700"></span>
+          </p>
+          <button
+            // onClick={() => navigate("/contact")}
+            onClick={() => setOpen(true)}
+            className="relative w-[210px] h-[45px] mt-8 flex items-center justify-center gap-[10px] px-[20px] py-[10px] rounded-[50px] bg-[#021933] text-white hover:bg-[#0085F6] transition-all duration-300 ease-in-out cursor-pointer overflow-hidden group hover:scale-105"
+          >
+            <span className="pointer-events-none absolute inset-0 bg-white opacity-30 rotate-45 translate-x-[-100%] group-hover:translate-x-[100%] blur-sm transition-transform duration-700"></span>
 
-          <span className="relative z-10 font-onest text-[19px] font-medium leading-[130%] tracking-[-0.05rem] text-white">
-            Get in Touch
-          </span>
-        </button>
-      </div>
-      <div className="flex items-start justify-end">
-        {/* <img
+            <span className="relative z-10 font-onest text-[19px] font-medium leading-[130%] tracking-[-0.05rem] text-white">
+              Get in Touch
+            </span>
+          </button>
+        </div>
+        <div
+          ref={svgWrapRef}
+          className="flex justify-center items-center lg:items-start lg:justify-end"
+        >
+          {/* <img
           src={heroIllustration}
           alt="Animated Image"
           className="h-[480px]"
         /> */}
-        <div ref={svgWrapRef} className="flex items-start justify-end">
-          <HeroIllustrationSVG className="h-[480px] w-auto z-20" />
+          <HeroIllustrationSVG className="lg:h-[480px] w-auto z-20" />
         </div>
       </div>
-    </div>
+      {open && <ContactModal onClose={() => setOpen(false)} />}
+    </>
   );
 };
 

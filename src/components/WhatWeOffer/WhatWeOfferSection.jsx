@@ -43,7 +43,7 @@ const WhatWeOfferSection = () => {
   return (
     <div
       ref={sectionRef}
-      className="flex flex-col pt-10 pb-20 px-20 items-center justify-center gap-5"
+      className="flex flex-col pt-10 pb-20 px-4 lg:px-20 items-center justify-center gap-5"
     >
       <h2 className="font-onest text-[60px] font-bold leading-[100%] tracking-[-0.03em] text-[#021933]">
         What We <span className="text-[#0085F6]">Offer</span>
@@ -53,12 +53,11 @@ const WhatWeOfferSection = () => {
         Purpose-built solutions and accelerators designed to solve real
         enterprise challenges.
       </p>
-      <div className="grid grid-cols-4 w-full gap-5 items-start justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full gap-5 items-start justify-center">
         {services.map((service, index) => {
           return (
             <div key={index} ref={addToRefs}>
               <ServiceCard
-                index={index}
                 image={service.image}
                 title={service.title}
                 solutions={service.solutions}

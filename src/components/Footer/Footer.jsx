@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import footerLogo from "../../assets/leftLogo.svg";
+import footerLogo from "../../assets/croppedLogo.svg";
 import topArrow from "../../assets/topArrow.svg";
 import Facebook from "../../assets/Facebook.svg";
 import Twitter from "../../assets/Twitter.svg";
@@ -36,11 +36,11 @@ const Footer = () => {
       )}
 
       {/* Top footer content wrapper — responsive layout */}
-      <div className="w-full pt-[38px] px-[20px] pb-[72px] md:px-[75px] flex flex-col md:flex-row gap-6 md:gap-0 items-start">
+      <div className="w-full pt-[38px] px-[20px] pb-[72px] md:px-[75px] flex flex-col md:flex-row items-start">
         {/* Left section — Company branding + description */}
-        <div className="w-full md:w-[40%] font-onest font-medium text-[16px] leading-[130%] tracking-[-0.03em] text-[#021933]">
-          <img src={footerLogo} alt="Qsource" className="h-[95px]" />
-          <p className="mt-2">
+        <div className="w-full md:w-[40%] font-onest font-medium text-[16px] leading-[130%] tracking-[-0.03em] text-[#021933] flex flex-col justify-center items-center md:items-start">
+          <img src={footerLogo} alt="Qsource" className="h-[90px]" />
+          <p className="mt-2 text-center md:text-start">
             Transform your challenges into triumphs
             <br />
             with our comprehensive IT solutions. Your
@@ -50,14 +50,14 @@ const Footer = () => {
         </div>
 
         {/* Middle section — Contact info + social media */}
-        <div className="w-full pt-10 md:w-[30%] font-onest font-medium text-[16px] leading-[130%] tracking-[-0.03em] text-[#021933] flex flex-col gap-4">
+        <div className="w-full pt-10 md:w-[30%] font-onest font-medium text-[16px] leading-[130%] tracking-[-0.03em] text-[#021933] flex flex-col gap-4 justify-center items-center md:items-start">
           <p className="font-bold">Connect with us:</p>
-          <p>
+          <p className="text-center md:text-start">
             Call us directly
             <br />
             832-400-2629
           </p>
-          <p>
+          <p className="text-center md:text-start">
             Mail us directly
             <br />
             hr@qsourcegroupinc.com
@@ -110,15 +110,15 @@ const Footer = () => {
         </div>
 
         {/* Right section — Office addresses */}
-        <div className="w-full pt-10 md:w-[30%] font-onest font-medium text-[16px] leading-[130%] tracking-[-0.03em] text-[#021933] flex flex-col gap-4">
-          <p className="font-bold">USA Office:</p>
-          <p>
+        <div className="w-full pt-10 md:w-[30%] font-onest font-medium text-[16px] leading-[130%] tracking-[-0.03em] text-[#021933] flex flex-col gap-4 justify-center items-center md:items-start">
+          <p className="font-bold text-center md:text-start">USA Office:</p>
+          <p className="text-center md:text-start">
             17302 House & Hahl Rd , Suite #310
             <br />
             Cypress, Texas, 77433 , United States.
           </p>
-          <p className="font-bold">India Office:</p>
-          <p>
+          <p className="font-bold text-center md:text-start">India Office:</p>
+          <p className="text-center md:text-start">
             # 821, Regus,
             <br />
             Manjeera Trinity Corporate, J.N.T.U.
@@ -129,12 +129,12 @@ const Footer = () => {
       </div>
 
       {/* Bottom footer bar — copyright + legal links */}
-      <div className="w-full flex flex-row justify-between px-[75px]">
-        <p className="pb-[72px] font-onest font-medium text-[16px] leading-[100%] tracking-normal text-[#021933]">
+      <div className="w-full flex flex-col lg:flex-row justify-between px-[72px] pb-[72px]">
+        <p className="pb-6 font-onest font-medium text-[16px] leading-[100%] tracking-normal text-[#021933] text-center lg:text-left">
           Copyright © {new Date().getFullYear()} Qsource Group Inc. All rights
           reserved.
         </p>
-        <p className="pr-[72px] pb-[72px] font-onest font-medium text-[16px] leading-[100%] tracking-normal text-[#021933] flex gap-26">
+        <p className="font-onest font-medium text-[16px] leading-[100%] tracking-normal text-[#021933] flex gap-26 justify-center lg:justify-end">
           <span>Privacy Policy</span>
           <span>Terms of Service</span>
         </p>

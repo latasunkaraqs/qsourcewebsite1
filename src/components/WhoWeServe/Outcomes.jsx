@@ -154,7 +154,7 @@ export const Outcome = ({ text }) => {
   );
 };
 
-export const EnterpriseOutcomes = () => {
+export const EnterpriseOutcomesIcons = () => {
   return (
     <div className="w-full flex flex-wrap gap-9">
       <Outcome1 />
@@ -165,6 +165,20 @@ export const EnterpriseOutcomes = () => {
       <Outcome6 />
       <Outcome7 />
       <Outcome8 />
+    </div>
+  );
+};
+export const EnterpriseOutcomes = () => {
+  return (
+    <div className="w-full flex flex-wrap gap-9">
+      <Outcome text="Oil & Gas" />
+      <Outcome text="Energy & Utilities" />
+      <Outcome text="Manufacturing" />
+      <Outcome text="Logistics" />
+      <Outcome text="Retail & E-commerce" />
+      <Outcome text="Healthcare" />
+      <Outcome text="Banking Financial Services" />
+      <Outcome text="Tele communications" />
     </div>
   );
 };

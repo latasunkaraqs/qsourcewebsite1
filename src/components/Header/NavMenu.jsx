@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -10,7 +10,12 @@ const HEADER_OFFSET = 91;
 
 const NavMenu = () => {
   const [active, setActive] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const sidebarRef = useRef(null);
+  const overlayRef = useRef(null);
+
   const scrollToSection = (selector) => {
+    setMenuOpen(false); // close sidebar
     const el = document.querySelector(selector);
 
     if (!el) return;
@@ -57,10 +62,49 @@ const NavMenu = () => {
     return () => ScrollTrigger.getAll().forEach((t) => t.kill());
   }, []);
 
+  useEffect(() => {
+    if (!sidebarRef.current || !overlayRef.current) return;
+
+    if (menuOpen) {
+      gsap.to(overlayRef.current, {
+        opacity: 1,
+        pointerEvents: "auto",
+        duration: 0.25,
+      });
+
+      gsap.to(sidebarRef.current, {
+        x: 0,
+        duration: 0.35,
+        ease: "power3.out",
+      });
+    } else {
+      gsap.to(overlayRef.current, {
+        opacity: 0,
+        pointerEvents: "none",
+        duration: 0.25,
+      });
+
+      gsap.to(sidebarRef.current, {
+        x: "100%",
+        duration: 0.35,
+        ease: "power3.in",
+      });
+    }
+  }, [menuOpen]);
+
   return (
     <div>
       {/* <ul className="flex items-center justify-end font-onest font-medium text-[16px] leading-[100%] tracking-normal capitalize text-[#1E1E1E] gap-[32px]"> */}
-      <ul className="flex items-center justify-end gap-[32px]">
+      <button
+        className="lg:hidden z-50 flex flex-col gap-1"
+        onClick={() => setMenuOpen(true)}
+      >
+        <span className="w-6 h-[2px] bg-black"></span>
+        <span className="w-6 h-[2px] bg-black"></span>
+        <span className="w-6 h-[2px] bg-black"></span>
+      </button>
+
+      <ul className="hidden lg:flex items-center justify-end gap-[32px]">
         {/* Routing List items */}
         {/* <li>
           <Link
@@ -181,6 +225,46 @@ const NavMenu = () => {
           </li>
         ))}
       </ul>
+      {/* ✅ Overlay */}
+      <div
+        ref={overlayRef}
+        onClick={() => setMenuOpen(false)}
+        className="fixed inset-0 bg-black/40 opacity-0 pointer-events-none lg:hidden z-40"
+      />
+
+      {/* ✅ Sidebar */}
+      <div
+        ref={sidebarRef}
+        className="
+          fixed top-0 right-0 h-full w-[280px]
+          bg-white shadow-xl
+          translate-x-full
+          lg:hidden z-50
+          p-8
+        "
+      >
+        <button
+          className="mb-8 text-sm opacity-70"
+          onClick={() => setMenuOpen(false)}
+        >
+          Close ✕
+        </button>
+
+        <ul className="flex flex-col gap-6">
+          {navItems.map((item) => (
+            <li key={item.id}>
+              <button
+                onClick={() => scrollToSection(`#${item.id}`)}
+                className={`text-left text-lg capitalize
+                ${active === item.id ? "opacity-100 font-semibold border-b-[1px]" : "opacity-70"}
+              `}
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

@@ -1,12 +1,9 @@
-import React from "react";
+// import { useState, useEffect } from "react";
 import bullet from "../../assets/bullet.svg";
 
-const ServiceCard = ({ index, image: Image, title, solutions }) => {
+const ServiceCard = ({ image: Image, title, solutions }) => {
   return (
-    <div
-      className="group border border-[#0085F6] rounded-[20px] pt-6 flex flex-col gap-5 items-center justify-center bg-[#0085F6]"
-      style={{ marginTop: `${index * 65}px` }}
-    >
+    <div className="group border border-[#0085F6] rounded-[20px] pt-6 flex flex-col gap-5 items-center justify-center bg-[#0085F6]">
       <div className="w-full justify-start px-6">
         <Image />
       </div>
