@@ -43,3 +43,13 @@ export const Service4 = () => {
     </div>
   );
 };
+
+export const Service5 = () => {
+  return (
+    <div className="flex items-center gap-2">
+      <div className="w-[103px] h-[103px] bg-white rounded-full flex items-center justify-center">
+        <img src={ServiceImg4} alt="Service 5" className="w-[55px] h-[55px]" />
+      </div>
+    </div>
+  );
+};

@@ -7,7 +7,7 @@ import accredition4Image from "../../assets/hub.svg";
 
 const TrustSection = () => {
   return (
-    <div className="flex flex-col lg:flex-row px-[40px] py-[72px] gap-40 justify-center items-center lg:items-start">
+    <div className="max-w-[1440px] mx-auto flex flex-col gap-12 lg:flex-row px-8 md:px-12 lg:px-18 py-[72px] justify-between items-center lg:items-start">
       {/* Partnership */}
       <div className="flex gap-2">
         <div className="flex flex-col gap-5 justify-start items-center lg:items-start">
@@ -17,7 +17,7 @@ const TrustSection = () => {
           <img
             src={partnersImage}
             alt="Partners"
-            className="w-[175px] h-[57px] grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition duration-300 cursor-pointer"
+            className="w-[175px] h-[57px] opacity-100 lg:grayscale lg:opacity-70 lg:hover:opacity-100 lg:hover:grayscale-0 transition duration-300 cursor-pointer"
           />
         </div>
       </div>
@@ -31,26 +31,26 @@ const TrustSection = () => {
           <p className="font-onest text-[30px] font-medium leading-[100%] tracking-[-0.03em] text-center lg:text-left">
             Accreditations
           </p>
-          <div className="flex flex-wrap gap-10 items-center justify-center lg:justify-start">
+          <div className="flex flex-wrap gap-15 items-center justify-center lg:justify-start">
             <img
               src={accredition1Image}
               alt="Accreditation1"
-              className="w-[117px] h-[66px] grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition duration-300 cursor-pointer"
+              className="w-[117px] h-[66px] opacity-100 lg:grayscale lg:opacity-70 lg:hover:opacity-100 lg:hover:grayscale-0 transition duration-300 cursor-pointer"
             />
             <img
               src={accredition2Image}
               alt="Accreditation2"
-              className="w-[131px] h-[83px] grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition duration-300 cursor-pointer"
+              className="w-[131px] h-[83px] opacity-100 lg:grayscale lg:opacity-70 lg:hover:opacity-100 lg:hover:grayscale-0 transition duration-300 cursor-pointer"
             />
             <img
               src={accredition3Image}
               alt="Accreditation3"
-              className="w-[224px] h-[65px] grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition duration-300 cursor-pointer"
+              className="w-[224px] h-[65px] opacity-100 lg:grayscale lg:opacity-70 lg:hover:opacity-100 lg:hover:grayscale-0 transition duration-300 cursor-pointer"
             />
             <img
               src={accredition4Image}
               alt="Accreditation4"
-              className="w-[108px] h-[83px] grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition duration-300 cursor-pointer"
+              className="w-[108px] h-[83px] opacity-100 lg:grayscale lg:opacity-70 lg:hover:opacity-100 lg:hover:grayscale-0 transition duration-300 cursor-pointer"
             />
           </div>
         </div>

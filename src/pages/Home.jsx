@@ -91,7 +91,7 @@ const Home = () => {
         <WhoWeServeSection />
       </section>
 
-      <section id="differentiators">
+      <section id="approach">
         <ValuesSection />
         <TrustSection />
       </section>

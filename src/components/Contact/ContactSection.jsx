@@ -7,11 +7,11 @@ const ContactSection = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <div className="w-full py-30 px-20 flex items-center justify-center flex-col gap-[34px]">
-        <h2 className="font-onest text-[60px] font-medium leading-[100%] tracking-[-0.03em] text-center text-black">
-          Let's start a <span className="text-[#0085F6]">great</span>
+      <div className="max-w-[1440px] mx-auto py-30 flex items-center justify-center flex-col gap-[34px] px-6 md:px-10 ">
+        <h2 className="font-onest text-[48px] md:text-[52px] lg:text-[60px] font-medium leading-[100%] tracking-[-0.03em] text-center text-black">
+          Let's Start the
           <br />
-          work right now
+          <span className="text-[#0085F6]">Right</span> Work.
         </h2>
         <button
           // onClick={() => navigate("/contact")}

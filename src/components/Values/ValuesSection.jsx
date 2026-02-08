@@ -6,19 +6,19 @@ const values = [
     number: "01",
     heading: "Enterprise-First",
     description:
-      "Solutions designed for scale, security, and governance from day one.",
+      "Grounded in enterprise realities, governance expectations, and the complexity of regulated, large-scale operating environments.",
   },
   {
     number: "02",
     heading: "Execution-Led",
     description:
-      "Clear ownership, disciplined delivery, and measurable results.",
+      "Structured delivery with clear ownership, disciplined execution, and outcomes aligned to business and operational priorities.",
   },
   {
     number: "03",
     heading: "Talent-Aligned",
     description:
-      "The right expertise, delivered through flexible engagement models.",
+      "Expert teams aligned through flexible models to maintain momentum, continuity, and long-term delivery effectiveness.",
   },
 ];
 
@@ -44,12 +44,12 @@ const ValuesSection = () => {
   return (
     <div
       ref={sectionRef}
-      className="w-full min-h-[700px] px-20 py-30 bg-[url('src/assets/valuesbg.svg')] bg-cover bg-bottom"
+      className="w-full min-h-[700px] py-30 bg-[url('src/assets/valuesbg.svg')] bg-cover bg-bottom"
     >
-      <div className="w-full flex flex-col justify-center items-center gap-20">
+      <div className="max-w-[1440px] mx-auto flex flex-col justify-center items-center gap-18 px-10 lg:px-[65px]">
         {/* slower heading */}
         <h2
-          className={`font-onest text-[60px] font-bold leading-[100%] tracking-[-0.03em] text-center text-white
+          className={`font-onest text-[52px] lg:text-[60px] font-bold leading-[100%] tracking-[-0.03em] text-center text-white
           transition-all duration-[1200ms] ease-out
           ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-14"}
         `}
@@ -57,7 +57,7 @@ const ValuesSection = () => {
           Built for Scale. Focused on Results.
         </h2>
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-20 md:gap-30">
+        <div className="flex flex-col md:flex-row items-start justify-center gap-10 lg:gap-20 xl:gap-30">
           {values.map((value, index) => (
             <div
               key={index}

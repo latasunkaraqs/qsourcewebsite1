@@ -274,7 +274,7 @@ const navItems = [
   { id: "services", label: "services" },
   { id: "solutions", label: "solutions" },
   { id: "industries", label: "industries" },
-  { id: "differentiators", label: "our differentiators" },
+  { id: "approach", label: "approach" },
   { id: "contact", label: "contact" },
 ];
 

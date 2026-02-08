@@ -8,21 +8,21 @@ import solutionImg5 from "../../assets/solution-5.svg";
 
 const WhatWeDoSection = () => {
   return (
-    <div className="flex flex-col py-20 px-4 lg:px-20 items-center justify-center gap-5">
-      <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] items-center">
-        <h2 className="font-onest text-[60px] font-bold leading-[100%] tracking-[-0.03em] text-[#021933] text-center lg:text-start">
+    <div className="max-w-[1440px] mx-auto flex flex-col py-10 md:py-15 lg:py-20 items-center justify-center gap-5 px-6 md:px-10 ">
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-[2fr_3fr] items-center">
+        <h2 className="font-onest text-[40px] md:text-[56px] lg:text-[60px] font-bold leading-[100%] tracking-[-0.03em] text-[#021933] text-center lg:text-start">
           What We <span className="text-[#0085F6]">Do</span>
         </h2>
 
         <p className="font-onest text-[20px] font-medium leading-[130%] tracking-[-0.05em] text-[#021933] text-center lg:text-start">
-          End-to-end technology services designed to support enterprise
-          transformation and sustained performance. Each service can be engaged
-          independently or combined as a part of a cohesive, end-to-end delivery
-          model.
+          Deliver end-to-end technology capabilities that support enterprise
+          change, operational reliability, and sustained performance. Each
+          capability can be engaged independently or delivered as part of a
+          cohesive delivery model.
         </p>
       </div>
 
-      <div className="flex flex-wrap gap-11 w-full py-18 items-center justify-center">
+      <div className="flex flex-wrap gap-11 w-full pt-8 lg:py-18 items-center justify-center">
         {solutions.map((solution, index) => {
           return (
             <SolutionCard
@@ -41,33 +41,33 @@ const WhatWeDoSection = () => {
 const solutions = [
   {
     image: solutionImg1,
-    title: "Consulting & Strategy",
+    title: "Consulting & Transformation",
     description:
-      "We start with deep discovery—understanding your business goals, technical landscape, and the challenges you face.",
+      "Defining technology strategy, transformation roadmaps, and operating models aligned to business outcomes and execution.",
   },
   {
     image: solutionImg2,
-    title: "Cloud & Infrastructure",
+    title: "Cloud, Infrastructure & Operations",
     description:
-      "We architect solutions that balance innovation with pragmatism, designed for today and built for tomorrow.",
+      "Designing, modernizing, and operating secure, resilient cloud and infrastructure environments for mission-critical workloads.",
   },
   {
     image: solutionImg3,
-    title: "Data, AI & Advanced Analytics",
+    title: "Data, AI & Analytics",
     description:
-      "Agile execution with continuous collaboration. We ship quality code and stand behind everything we build.",
+      "Transforming enterprise data into trusted insights through analytics, AI, and scalable data platforms.",
   },
   {
     image: solutionImg4,
-    title: "Cybersecurity",
+    title: "Application & Digital Experience",
     description:
-      "Launch is just the beginning. We provide ongoing support, monitoring, and continuous optimization.",
+      "Evolving enterprise applications and digital platforms to improve performance, usability, and long-term adaptability.",
   },
   {
     image: solutionImg5,
-    title: "Application Development & Modernization",
+    title: "Talent & Staffing Solutions",
     description:
-      "Launch is just the beginning. We provide ongoing support, monitoring, and continuous optimization.",
+      "Augmenting enterprise teams with flexible talent models to accelerate delivery and sustain operational continuity.",
   },
 ];
 

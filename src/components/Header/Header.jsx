@@ -5,20 +5,16 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 z-50 w-full h-[91px] bg-white shadow-[0_4px_6px_rgba(0,0,0,0.03)] flex justify-between items-center px-18">
-      <div>
-        {/* Without Anchor Tags */}
-        {/* <Link to="/">
-          <img src={logo} alt="QSource" className="w-[267px] h-[62px]" />
-        </Link> */}
+    <header className="fixed top-0 left-0 z-50 w-full h-[91px] bg-white shadow-[0_4px_6px_rgba(0,0,0,0.03)]">
+      <div className="max-w-[1440px] mx-auto h-full flex justify-between items-center px-6 md:px-10">
+        <div>
+          <a href="#about">
+            <img src={logo} alt="QSource" className="h-[62px]" />
+          </a>
+        </div>
 
-        {/* With anchor tags */}
-        <a href="#about">
-          <img src={logo} alt="QSource" className="h-[62px]" />
-        </a>
+        <NavMenu />
       </div>
-
-      <NavMenu />
     </header>
   );
 };

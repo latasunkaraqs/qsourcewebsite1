@@ -147,7 +147,7 @@ export const Outcome8 = () => {
 export const Outcome = ({ text }) => {
   return (
     <div className="px-[19px] py-[16px] bg-white rounded-full flex items-center justify-center">
-      <p className="font-onest text-[20px] font-medium leading-[100%] tracking-[-0.03em] text-[#021933]">
+      <p className="font-onest text-[16px] lg:text-[18px] font-medium leading-[100%] tracking-[-0.03em] text-[#021933]">
         {text}
       </p>
     </div>
@@ -156,7 +156,7 @@ export const Outcome = ({ text }) => {
 
 export const EnterpriseOutcomesIcons = () => {
   return (
-    <div className="w-full flex flex-wrap gap-9">
+    <div className="w-full flex flex-wrap gap-5">
       <Outcome1 />
       <Outcome2 />
       <Outcome3 />
@@ -170,22 +170,22 @@ export const EnterpriseOutcomesIcons = () => {
 };
 export const EnterpriseOutcomes = () => {
   return (
-    <div className="w-full flex flex-wrap gap-9">
+    <div className="w-full flex flex-wrap gap-3 md:gap-4 lg:gap-5">
       <Outcome text="Oil & Gas" />
       <Outcome text="Energy & Utilities" />
       <Outcome text="Manufacturing" />
-      <Outcome text="Logistics" />
+      <Outcome text="Logistics & Supply Chain" />
       <Outcome text="Retail & E-commerce" />
-      <Outcome text="Healthcare" />
-      <Outcome text="Banking Financial Services" />
-      <Outcome text="Tele communications" />
+      <Outcome text="Healthcare & Life Sciences" />
+      <Outcome text="Banking, Financial Services & Insurance (BFSI)" />
+      <Outcome text="Telecommunications & Media" />
     </div>
   );
 };
 
 export const GovernmentOutcomes = () => {
   return (
-    <div className="w-full flex flex-wrap gap-6">
+    <div className="w-full flex flex-wrap gap-3 md:gap-4 lg:gap-5">
       <Outcome text="Central, State & Local Government" />
       <Outcome text="Public Sector Undertakings (PSUs)" />
       <Outcome text="Smart Cities & Urban Modernization" />
@@ -197,11 +197,11 @@ export const GovernmentOutcomes = () => {
 
 export const CommercialOutcomes = () => {
   return (
-    <div className="w-full flex flex-wrap gap-6">
+    <div className="w-full flex flex-wrap gap-3 md:gap-4 lg:gap-5">
       <Outcome text="Real Estate & Property Management" />
       <Outcome text="Education & Research Institutions" />
       <Outcome text="Travel, Hospitality & Aviation" />
-      <Outcome text="Healthcare & Life Sciences" />
+      <Outcome text="Automotive & Mobility" />
       <Outcome text="Professional Services" />
     </div>
   );
@@ -209,11 +209,11 @@ export const CommercialOutcomes = () => {
 
 export const SpecialOutcomes = () => {
   return (
-    <div className="w-full flex flex-wrap gap-6">
-      <Outcome text="Lorem ipsum dolor sit amet" />
-      <Outcome text="Consectetur adipiscing elit" />
-      <Outcome text="Sed do eiusmod tempor incididunt" />
-      <Outcome text="Ut labore et dolore magna aliqua" />
+    <div className="w-full flex flex-wrap gap-3 md:gap-4 lg:gap-5">
+      <Outcome text="Technology & SaaS Providers" />
+      <Outcome text="Non-Profit & Social Impact Organizations" />
+      <Outcome text="Renewable Energy & Sustainability" />
+      <Outcome text="Startups & High-Growth Enterprises" />
     </div>
   );
 };

@@ -36,3 +36,13 @@ body {
 .spin-slow {
   animation: spin-slow 2.5s linear infinite;
 }
+
+a {
+  outline: none;
+}
+
+a:focus,
+a:focus-visible,
+a:active {
+  outline: none;
+}
