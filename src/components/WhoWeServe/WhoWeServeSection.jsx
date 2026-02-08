@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import * as Outcomes from "./Outcomes";
+import { isMobileView } from "../../utils/common";
+import MobileAccordion from "./MobileAccordion";
 
 const WhoWeServeSection = () => {
   const [active, setActive] = useState(1);
@@ -103,60 +105,63 @@ const WhoWeServeSection = () => {
         environments.
       </p>
 
-      <div className="w-full h-[608px] mt-15">
-        {/* Content Panel */}
-        <div className="w-full h-[511px] relative">
-          {tabs.map((tab, i) => (
-            <div
-              key={tab.id}
-              ref={(el) => (panelsRef.current[i] = el)}
-              className="absolute inset-0 w-full h-[511px] bg-cover bg-center opacity-0"
-              style={{ backgroundImage: `url(${tab.backgroundImage})` }}
-            >
-              <div className="w-full h-full bg-black/35 pt-[60px] px-6 lg:px-[65px]">
-                <p className="content-text font-onest text-[26px] lg:text-[32px] xl:text-[37px] font-medium leading-[130%] tracking-[-0.05em] text-white">
-                  {tab.content}
-                </p>
-
-                <p className="mt-18 mb-8 font-onest text-[25px] font-medium leading-[100%] tracking-[-0.03em] text-white">
-                  Key Outcomes
-                </p>
-
-                <div>{tab.outcomes && <tab.outcomes />}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Tabs Panel */}
-        <div className="w-full grid grid-cols-4 gap-11 items-start justify-start">
-          {tabs.map((tab) => {
-            const isActive = active === tab.id;
-
-            return (
-              <button
+      {!isMobileView() && (
+        <div className="w-full h-[608px] mt-15">
+          {/* Content Panel */}
+          <div className="w-full h-[511px] relative">
+            {tabs.map((tab, i) => (
+              <div
                 key={tab.id}
-                onClick={() => handleTabSelect(tab.id)}
-                className="text-left cursor-pointer"
+                ref={(el) => (panelsRef.current[i] = el)}
+                className="absolute inset-0 w-full h-[511px] bg-cover bg-center opacity-0"
+                style={{ backgroundImage: `url(${tab.backgroundImage})` }}
               >
-                <div
-                  className={`max-w-[265px] h-[5px] mt-6 mb-3 transition-all duration-300 ${
-                    isActive ? "bg-[#0085F6]" : "bg-[#021933]/40"
-                  }`}
-                />
+                <div className="w-full h-full bg-black/35 pt-[60px] px-6 lg:px-[65px]">
+                  <p className="content-text font-onest text-[26px] lg:text-[32px] xl:text-[37px] font-medium leading-[130%] tracking-[-0.05em] text-white">
+                    {tab.content}
+                  </p>
 
-                <span
-                  className={`font-onest text-[21px] font-medium leading-[120%] tracking-[-0.03em] transition-colors duration-300 ${
-                    isActive ? "text-[#0085F6]" : "text-[#021933]/40"
-                  }`}
+                  <p className="mt-18 mb-8 font-onest text-[25px] font-medium leading-[100%] tracking-[-0.03em] text-white">
+                    Key Outcomes
+                  </p>
+
+                  <div>{tab.outcomes && <tab.outcomes />}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Tabs Panel */}
+          <div className="w-full grid grid-cols-4 gap-11 items-start justify-start">
+            {tabs.map((tab) => {
+              const isActive = active === tab.id;
+
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => handleTabSelect(tab.id)}
+                  className="text-left cursor-pointer"
                 >
-                  {tab.label}
-                </span>
-              </button>
-            );
-          })}
+                  <div
+                    className={`max-w-[265px] h-[5px] mt-6 mb-3 transition-all duration-300 ${
+                      isActive ? "bg-[#0085F6]" : "bg-[#021933]/40"
+                    }`}
+                  />
+
+                  <span
+                    className={`font-onest text-[21px] font-medium leading-[120%] tracking-[-0.03em] transition-colors duration-300 ${
+                      isActive ? "text-[#0085F6]" : "text-[#021933]/40"
+                    }`}
+                  >
+                    {tab.label}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
-      </div>
+      )}
+      {isMobileView() && <MobileAccordion tabs={tabs} />}
     </div>
   );
 };
