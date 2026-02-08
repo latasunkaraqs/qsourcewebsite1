@@ -104,7 +104,7 @@ const NavMenu = () => {
         <span className="w-6 h-[2px] bg-black"></span>
       </button>
 
-      <ul className="hidden lg:flex items-center justify-end gap-[32px]">
+      <ul className="hidden lg:flex items-center justify-end gap-[32px] navlinks">
         {/* Routing List items */}
         {/* <li>
           <Link
@@ -250,7 +250,7 @@ const NavMenu = () => {
           Close ✕
         </button>
 
-        <ul className="flex flex-col gap-6">
+        <ul className="flex flex-col gap-6 navlinks">
           {navItems.map((item) => (
             <li key={item.id}>
               <button

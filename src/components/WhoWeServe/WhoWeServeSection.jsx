@@ -91,7 +91,7 @@ const WhoWeServeSection = () => {
   }, []);
 
   return (
-    <div className="max-w-[1440px] mx-auto flex flex-col py-10 md:py-15 lg:py-20 items-center justify-center gap-5 px-6 md:px-10 ">
+    <div className="max-w-[1440px] mx-auto flex flex-col py-10 md:py-15 items-center justify-center gap-5 px-6 md:px-10 ">
       <h2 className="font-onest text-[40px] md:text-[56px] lg:text-[60px] font-bold leading-[100%] tracking-[-0.03em] text-[#021933]">
         Who We <span className="text-[#0085F6]">Serve</span>
       </h2>
@@ -122,9 +122,7 @@ const WhoWeServeSection = () => {
                   Key Outcomes
                 </p>
 
-                <div>
-                  {tab.outcomes && <tab.outcomes />}
-                </div>
+                <div>{tab.outcomes && <tab.outcomes />}</div>
               </div>
             </div>
           ))}

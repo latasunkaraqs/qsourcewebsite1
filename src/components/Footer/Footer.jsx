@@ -134,15 +134,34 @@ const Footer = () => {
         </div>
 
         {/* Bottom footer bar — copyright + legal links */}
-        <div className="w-full flex flex-col lg:flex-row justify-between pb-[72px]">
-          <p className="pb-6 font-onest font-medium text-[16px] leading-[100%] tracking-normal text-[#021933] text-center lg:text-left">
+        <div className="w-full flex flex-col-reverse gap-6 md:gap-4 lg:flex-row lg:items-center lg:justify-between pb-10 md:pb-14 lg:pb-[72px]">
+          {/* Copyright */}
+          <div className="font-onest font-medium text-sm md:text-base leading-tight text-[#021933] text-center lg:text-left">
             Copyright © {new Date().getFullYear()} QSource Group Inc. All rights
             reserved.
-          </p>
-          <p className="font-onest font-medium text-[16px] leading-[100%] tracking-normal text-[#021933] flex gap-26 justify-center lg:justify-end">
-            <span>Privacy Policy</span>
-            <span>Terms of Service</span>
-          </p>
+          </div>
+
+          {/* Legal links */}
+          <div
+            className="
+    font-onest font-medium text-sm md:text-base leading-tight text-[#021933]
+    flex flex-wrap gap-x-5 gap-y-2
+    justify-center lg:justify-end
+  "
+          >
+            <Link to="/privacy-policy" className="cursor-pointer">
+              <span>Privacy Policy</span>
+            </Link>
+            <Link to="/terms-of-service" className="cursor-pointer">
+              <span>Terms of Service</span>
+            </Link>
+            <Link to="/cookie-policy" className="cursor-pointer">
+              <span>Cookie Policy</span>
+            </Link>
+            <Link to="/security-compliance" className="cursor-pointer">
+              <span>Security & Compliance</span>
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
