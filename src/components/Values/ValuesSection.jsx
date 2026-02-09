@@ -44,7 +44,7 @@ const ValuesSection = () => {
   return (
     <div
       ref={sectionRef}
-      className="w-full min-h-[700px] py-30 bg-[url('src/assets/valuesbg.svg')] bg-cover bg-bottom"
+      className="w-full min-h-[720px] py-30 bg-[url('src/assets/valuesbg.svg')] bg-cover bg-bottom"
     >
       <div className="max-w-[1440px] mx-auto flex flex-col justify-center items-center gap-18 px-10 lg:px-[65px]">
         {/* slower heading */}

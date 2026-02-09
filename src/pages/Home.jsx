@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef } from "react";
+import { Helmet } from "react-helmet";
 // import { useRef } from "react";
 import HeroSection from "../components/Hero/HeroSection";
 import WhatWeDoSection from "../components/WhatWeDo/WhatWeDoSection";
@@ -93,9 +94,24 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="relative">
-      {/* Without Section Ids */}
-      {/* <HeroSection />
+    <>
+      <Helmet>
+        <title>
+          QSource Group Inc. | Enterprise Technology Services & Solutions |
+          Scalable, Reliable IT Delivery
+        </title>
+        <meta
+          name="description"
+          content="Enterprise technology services and solutions for complex, regulated, and large-scale environments. We design, modernize, and operate mission-critical systems with disciplined execution and long-term business focus."
+        />
+        <meta
+          name="keywords"
+          content="enterprise technology services, enterprise IT solutions, digital transformation services, cloud infrastructure operations, data analytics AI services, application modernization, enterprise systems integration, IT consulting and delivery, regulated industry IT solutions, mission-critical systems"
+        />
+      </Helmet>
+      <div className="relative">
+        {/* Without Section Ids */}
+        {/* <HeroSection />
       <WhatWeDoSection />
       <WhatWeOfferSection />
       <WhoWeServeSection />
@@ -103,37 +119,38 @@ const Home = () => {
       <TrustSection />
       <ContactSection /> */}
 
-      {/* With Section IDs */}
-      <section id="about">
-        <HeroSection />
-      </section>
+        {/* With Section IDs */}
+        <section id="about">
+          <HeroSection />
+        </section>
 
-      <section id="services">
-        <WhatWeDoSection />
-      </section>
+        <section id="services">
+          <WhatWeDoSection />
+        </section>
 
-      <section id="solutions">
-        <WhatWeOfferSection />
-      </section>
+        <section id="solutions">
+          <WhatWeOfferSection />
+        </section>
 
-      <section id="industries">
-        <WhoWeServeSection />
-      </section>
+        <section id="industries">
+          <WhoWeServeSection />
+        </section>
 
-      <section id="approach">
-        <ValuesSection />
-        <TrustSection />
-      </section>
+        <section id="approach">
+          <ValuesSection />
+          <TrustSection />
+        </section>
 
-      <section id="contact">
-        <ContactSection />
-      </section>
+        <section id="contact">
+          <ContactSection />
+        </section>
 
-      <SwigglyLineSVG
-        ref={svgLineRef}
-        className="absolute -top-8 left-1/2 -translate-x-1/2 -z-10 max-w-[1440px]"
-      />
-    </div>
+        <SwigglyLineSVG
+          ref={svgLineRef}
+          className="absolute -top-8 left-1/2 -translate-x-1/2 -z-10 max-w-[1440px]"
+        />
+      </div>
+    </>
   );
 };
 

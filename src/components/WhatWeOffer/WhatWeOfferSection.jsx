@@ -43,26 +43,26 @@ const WhatWeOfferSection = () => {
   return (
     <div
       ref={sectionRef}
-      className="max-w-[1440px] mx-auto flex flex-col py-10 md:py-15 items-center justify-center gap-5 px-6 md:px-10 "
+      className="max-w-[1440px] mx-auto flex flex-col py-8 items-center justify-center gap-5 px-6 md:px-10 "
     >
       <h2 className="font-onest text-[40px] md:text-[56px] lg:text-[60px] font-bold leading-[100%] tracking-[-0.03em] text-[#021933] text-center">
         What We <span className="text-[#0085F6]">Offer</span>
       </h2>
 
-      <p className="font-onest text-[20px] font-medium leading-[130%] tracking-[-0.05em] text-[#021933] max-w-[750px] text-center">
+      <p className="font-onest text-[20px] font-medium leading-[130%] tracking-[-0.05em] text-[#021933] max-w-[90%] text-center">
         Enterprise solutions focused on addressing complex operational and
         industry-specific challenges through proven patterns and deep domain
         context. Each solution is structured to fit within existing
         environments, supporting continuity, efficiency, and long-term business
         evolution.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-11 items-start justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 items-start justify-center">
         {services.map((service, index) => {
           return (
             <div
               key={index}
               ref={addToRefs}
-              className="width-[95%] md:width-[45%] lg:width-[33%]"
+              className="width-[95%] md:width-[45%] lg:width-[33%] h-full"
             >
               <ServiceCard
                 image={service.image}
@@ -80,57 +80,68 @@ const WhatWeOfferSection = () => {
 const services = [
   {
     image: Service1,
-    title: "Digital Operations",
+    title: "Digital Operations & Enterprise Transformation",
     solutions: [
-      "Incident & Escalation Management",
-      "Workflow & Service Automation",
-      "Field Operations Mobility",
-      "Service Performance Analytics",
-      "Enterprise Service Visibility",
+      "Incident & Service Management",
+      "Workflow & Process Automation",
+      "Application Modernization",
+      "Field & Mobile Operations",
+      "Digital Workplace Solutions",
+      "Service Visibility & Monitoring",
+      "Performance & Experience Analytics",
+      "ITSM / ESM Enablement",
+      "Cloud Operations & FinOps",
+      "Identity & Operational Security",
     ],
   },
   {
     image: Service2,
-    title: "Supply Chain",
+    title: "Intelligent Supply Chain & Asset Management",
     solutions: [
       "Warehouse Optimization",
       "Inventory Accuracy & Control",
       "Logistics & Network Visibility",
+      "Demand Planning",
       "Asset & Materials Management",
-      "Supply Chain Performance Insights",
+      "Asset Reliability & Maintenance Analytics",
+      "Supplier & Procurement Intelligence",
+      "Order Fulfillment Enablement",
+      "Sustainability & ESG Visibility",
+      "Supply Chain Intelligence",
     ],
   },
   {
     image: Service3,
-    title: "Healthcare Solutions",
+    title: "Industry-Focused Digital Solutions",
     solutions: [
-      "Patient Engagement Platforms",
-      "Clinical System Integration",
-      "Revenue Cycle Automation",
-      "Hospital Operations Intelligence",
-      "Care Quality & Compliance Analytics",
+      "Industry Digital Platforms",
+      "Customer & Patient Engagement",
+      "Core & Industry System Integration",
+      "Revenue & Financial Automation",
+      "Operations & Capacity Intelligence",
+      "Asset-Intensive Operations Enablement",
+      "Production & Utilization Analytics",
+      "Asset Lifecycle Intelligence",
+      "Regulatory & Compliance Management",
+      "HSSE & Safety Analytics",
+      "Industry Data Models",
+      "Industry Decision Dashboards",
     ],
   },
   {
     image: Service4,
-    title: "Oil & Gas Digital",
+    title: "Data, Analytics & Automation Accelerators",
     solutions: [
-      "Digital Oilfield Enablement",
-      "Production & Well Analytics",
-      "Asset Lifecycle Intelligence",
-      "HSSE Compliance & Reporting",
-      "Operational Reliability Dashboards",
-    ],
-  },
-  {
-    image: Service5,
-    title: "Analytics, Automation & Accelerators",
-    solutions: [
-      "Enterprise Reporting",
+      "Enterprise Data Platforms",
+      "BI & Visualization",
       "Executive KPI Dashboards",
-      "Predictive Maintenance Analytics",
-      "Intelligent Process Automation",
+      "Predictive & Prescriptive Analytics",
+      "AI / ML Enablement",
+      "Intelligent Automation",
+      "Digital Twins & Simulation",
       "ERP & CRM Accelerators",
+      "Integration & API Frameworks",
+      "Data Governance & Privacy",
     ],
   },
 ];

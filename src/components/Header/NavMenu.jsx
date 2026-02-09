@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,20 +8,41 @@ gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 const HEADER_OFFSET = 91;
 
+const navItems = [
+  { id: "about", label: "about" },
+  { id: "services", label: "services" },
+  { id: "solutions", label: "solutions" },
+  { id: "industries", label: "industries" },
+  { id: "approach", label: "approach" },
+  { id: "contact", label: "contact" },
+];
+
 const NavMenu = () => {
   const [active, setActive] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
+
   const sidebarRef = useRef(null);
   const overlayRef = useRef(null);
 
-  const scrollToSection = (selector) => {
-    setMenuOpen(false); // close sidebar
-    const el = document.querySelector(selector);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
+  // ✅ Clear highlight when not on home
+  useEffect(() => {
+    if (!isHome) setActive(null);
+  }, [isHome]);
+
+  // ✅ Scroll only on home route
+  const scrollToSection = (selector) => {
+    if (!isHome) return;
+
+    setMenuOpen(false);
+
+    const el = document.querySelector(selector);
     if (!el) return;
+
     if (selector === "#solutions") {
       const st = ScrollTrigger.getById("solutionsPin");
-
       if (st) {
         gsap.to(window, {
           duration: 0,
@@ -37,21 +58,24 @@ const NavMenu = () => {
       duration: 0,
       scrollTo: {
         y: el,
-        offsetY: HEADER_OFFSET, // adjust if you have sticky header
+        offsetY: HEADER_OFFSET,
       },
       ease: "power2.out",
     });
   };
-  useEffect(() => {
-    navItems.forEach((item) => {
-      const section = document.querySelector(`#${item.id}`);
-      if (!section) return;
 
-      ScrollTrigger.create({
+  // ✅ Register ScrollTriggers only on home
+  useEffect(() => {
+    if (!isHome) return;
+
+    const triggers = navItems.map((item) => {
+      const section = document.querySelector(`#${item.id}`);
+      if (!section) return null;
+
+      return ScrollTrigger.create({
         trigger: section,
         start: "top center",
         end: "bottom center",
-
         onEnter: () => setActive(item.id),
         onEnterBack: () => setActive(item.id),
       });
@@ -59,9 +83,12 @@ const NavMenu = () => {
 
     ScrollTrigger.refresh();
 
-    return () => ScrollTrigger.getAll().forEach((t) => t.kill());
-  }, []);
+    return () => {
+      triggers.forEach((t) => t && t.kill());
+    };
+  }, [isHome]);
 
+  // ✅ Sidebar animation
   useEffect(() => {
     if (!sidebarRef.current || !overlayRef.current) return;
 
@@ -94,7 +121,7 @@ const NavMenu = () => {
 
   return (
     <div>
-      {/* <ul className="flex items-center justify-end font-onest font-medium text-[16px] leading-[100%] tracking-normal capitalize text-[#1E1E1E] gap-[32px]"> */}
+      {/* Mobile hamburger */}
       <button
         className="lg:hidden z-50 flex flex-col gap-1"
         onClick={() => setMenuOpen(true)}
@@ -104,135 +131,37 @@ const NavMenu = () => {
         <span className="w-6 h-[2px] bg-black"></span>
       </button>
 
+      {/* Desktop nav */}
       <ul className="hidden lg:flex items-center justify-end gap-[32px] navlinks">
-        {/* Routing List items */}
-        {/* <li>
-          <Link
-            to="/about"
-            className="transition-opacity duration-300 ease-out hover:opacity-70"
-          >
-            about
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/services"
-            className="transition-opacity duration-300 ease-out hover:opacity-70"
-          >
-            services
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/solutions"
-            className="transition-opacity duration-300 ease-out hover:opacity-70"
-          >
-            solutions
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/industries"
-            className="transition-opacity duration-300 ease-out hover:opacity-70"
-          >
-            industries
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/differentiators"
-            className="transition-opacity duration-300 ease-out hover:opacity-70"
-          >
-            our differentiators
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/contact"
-            className="transition-opacity duration-300 ease-out hover:opacity-70"
-          >
-            contact
-          </Link>
-        </li> */}
-
-        {/* Anchor Tag List Items */}
-        {/* <li>
-          <button
-            onClick={() => scrollToSection("#about")}
-            className="transition-opacity duration-300 ease-out hover:opacity-70"
-          >
-            about
-          </button>
-        </li>
-
-        <li>
-          <button
-            onClick={() => scrollToSection("#services")}
-            className="transition-opacity duration-300 ease-out hover:opacity-70"
-          >
-            services
-          </button>
-        </li>
-
-        <li>
-          <button
-            onClick={() => scrollToSection("#solutions")}
-            className="transition-opacity duration-300 ease-out hover:opacity-70"
-          >
-            solutions
-          </button>
-        </li>
-
-        <li>
-          <button
-            onClick={() => scrollToSection("#industries")}
-            className="transition-opacity duration-300 ease-out hover:opacity-70"
-          >
-            industries
-          </button>
-        </li>
-
-        <li>
-          <button
-            onClick={() => scrollToSection("#differentiators")}
-            className="transition-opacity duration-300 ease-out hover:opacity-70"
-          >
-            our differentiators
-          </button>
-        </li>
-
-        <li>
-          <button
-            onClick={() => scrollToSection("#contact")}
-            className="transition-opacity duration-300 ease-out hover:opacity-70"
-          >
-            contact
-          </button>
-        </li> */}
         {navItems.map((item) => (
           <li key={item.id}>
             <button
               onClick={() => scrollToSection(`#${item.id}`)}
-              className={` 
-              transition-opacity duration-300 ease-out hover:opacity-70 cursor-pointer
-              ${active === item.id ? "opacity-100 font-semibold border-b-[1px]" : "opacity-50"}
-            `}
+              className={`
+                transition-opacity duration-300 ease-out hover:opacity-70 cursor-pointer
+                ${
+                  isHome && active === item.id
+                    ? "opacity-100 font-semibold border-b-[1px]"
+                    : "opacity-50"
+                }
+              `}
             >
-              <span className="font-onest font-medium text-[16px] leading-[100%] tracking-normal capitalize text-[#1E1E1E]">
+              <span className="font-onest font-medium text-[16px] capitalize text-[#1E1E1E]">
                 {item.label}
               </span>
             </button>
           </li>
         ))}
       </ul>
-      {/* ✅ Overlay */}
+
+      {/* Overlay */}
       <div
         ref={overlayRef}
         onClick={() => setMenuOpen(false)}
         className="fixed inset-0 bg-black/40 opacity-0 pointer-events-none lg:hidden z-40"
       />
 
-      {/* ✅ Sidebar */}
+      {/* Sidebar */}
       <div
         ref={sidebarRef}
         className="
@@ -256,8 +185,12 @@ const NavMenu = () => {
               <button
                 onClick={() => scrollToSection(`#${item.id}`)}
                 className={`text-left text-lg capitalize
-                ${active === item.id ? "opacity-100 font-semibold border-b-[1px]" : "opacity-70"}
-              `}
+                  ${
+                    isHome && active === item.id
+                      ? "opacity-100 font-semibold border-b-[1px]"
+                      : "opacity-70"
+                  }
+                `}
               >
                 {item.label}
               </button>
@@ -268,14 +201,5 @@ const NavMenu = () => {
     </div>
   );
 };
-
-const navItems = [
-  { id: "about", label: "about" },
-  { id: "services", label: "services" },
-  { id: "solutions", label: "solutions" },
-  { id: "industries", label: "industries" },
-  { id: "approach", label: "approach" },
-  { id: "contact", label: "contact" },
-];
 
 export default NavMenu;

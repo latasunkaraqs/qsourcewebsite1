@@ -17,6 +17,7 @@ import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
 import SecurityCompliance from "./pages/SecurityCompliance";
 import ScrollToTop from "./components/ScrollToTop.jsx";
+import CookieBanner from "./CookieBanner.jsx";
 
 function App() {
   // const [loading, setLoading] = useState(true);
@@ -28,6 +29,7 @@ function App() {
   return (
     <BrowserRouter>
       {" "}
+      <CookieBanner />
       <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>

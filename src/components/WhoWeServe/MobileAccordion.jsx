@@ -1,7 +1,8 @@
 import { useState } from "react";
+import topArrow from "../../assets/topArrow.svg";
 
 function MobileAccordion({ tabs }) {
-  const [openId, setOpenId] = useState(null);
+  const [openId, setOpenId] = useState(tabs?.[0]?.id ?? null);
 
   const toggle = (id) => {
     setOpenId(openId === id ? null : id);
@@ -15,23 +16,29 @@ function MobileAccordion({ tabs }) {
         return (
           <div
             key={tab.id}
-            className="rounded-xl overflow-hidden border border-[#021933]/15"
+            className={`overflow-hidden border-t-4 ${isOpen ? "border-[#0085F6]" : "border-[#021933]/40"}`}
           >
             {/* Header */}
             <button
               onClick={() => toggle(tab.id)}
-              className="w-full text-left px-5 py-4 bg-[#F7FAFF] flex justify-between items-center"
+              className="w-full text-left px-5 py-4 bg-white flex justify-between items-center"
             >
-              <span className="font-onest text-[18px] font-medium">
+              <span
+                className={`font-onest text-[18px] font-medium leading-[120%] tracking-[-0.03em] ${isOpen ? "text-[#0085F6]" : "text-[#021933]/40"} `}
+              >
                 {tab.label}
               </span>
 
               <span
                 className={`transition-transform duration-300 ${
-                  isOpen ? "rotate-180" : ""
+                  isOpen ? "" : "rotate-180"
                 }`}
               >
-                ▼
+                <img
+                  src={topArrow}
+                  alt="▲"
+                  className={`w-[30px] ${isOpen ? "grayscale-0 opacity-100" : "grayscale opacity-40"} transition duration-300 cursor-pointer`}
+                />
               </span>
             </button>
 

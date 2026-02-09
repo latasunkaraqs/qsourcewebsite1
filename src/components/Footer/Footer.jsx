@@ -6,6 +6,7 @@ import Facebook from "../../assets/Facebook.svg";
 import Twitter from "../../assets/Twitter.svg";
 import Youtube from "../../assets/Youtube.svg";
 import Instagram from "../../assets/Instagram.svg";
+import { Phone, Mail } from "lucide-react";
 
 const Footer = () => {
   const [showTopArrow, setShowTopArrow] = useState(false);
@@ -53,16 +54,32 @@ const Footer = () => {
           {/* Middle section — Contact info + social media */}
           <div className="w-full pt-10 md:w-[30%] font-onest font-medium text-[16px] leading-[130%] tracking-[-0.03em] text-[#021933] flex flex-col gap-4 justify-center items-center md:items-start">
             <p className="font-bold">Connect with us:</p>
-            <p className="text-center md:text-start">
-              Phone
-              <br />
-              +1 832-400-2629
-            </p>
-            <p className="text-center md:text-start">
-              Email
-              <br />
-              hr@qsourcegroupinc.com
-            </p>
+            <div className="space-y-3">
+              <div className="flex items-start justify-center md:justify-start gap-2">
+                <Phone className="w-4 h-4 mt-1 shrink-0" />
+                <p className="text-center md:text-start leading-tight">
+                  Phone
+                  <br />
+                  <a href="tel:+18324002629" className="hover:underline">
+                    +1 832-400-2629
+                  </a>
+                </p>
+              </div>
+
+              <div className="flex items-start justify-center md:justify-start gap-2">
+                <Mail className="w-4 h-4 mt-1 shrink-0" />
+                <p className="text-center md:text-start leading-tight">
+                  Email
+                  <br />
+                  <a
+                    href="mailto:hr@qsourcegroupinc.com"
+                    className="hover:underline"
+                  >
+                    hr@qsourcegroupinc.com
+                  </a>
+                </p>
+              </div>
+            </div>
             <div className="flex gap-5">
               <a
                 href="https://www.facebook.com/"
@@ -116,13 +133,13 @@ const Footer = () => {
 
           {/* Right section — Office addresses */}
           <div className="w-full pt-10 md:w-[30%] font-onest font-medium text-[16px] leading-[130%] tracking-[-0.03em] text-[#021933] flex flex-col gap-4 justify-center items-center md:items-start md:justify-start">
-            <p className="font-bold text-center md:text-start">USA:</p>
+            <p className="font-bold text-center md:text-start">USA</p>
             <p className="text-center md:text-start">
               17302 House & Hahl Rd , Suite #310
               <br />
               Cypress, Texas, 77433 , United States.
             </p>
-            <p className="font-bold text-center md:text-start">India:</p>
+            <p className="font-bold text-center md:text-start">India</p>
             <p className="text-center md:text-start">
               # 821, Regus,
               <br />

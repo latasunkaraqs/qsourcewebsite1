@@ -146,7 +146,7 @@ export const Outcome8 = () => {
 
 export const Outcome = ({ text }) => {
   return (
-    <div className="px-[19px] py-[16px] bg-white rounded-full flex items-center justify-center">
+    <div className="px-4 py-2 md:px-[19px] md:py-[16px] bg-white rounded-full flex items-center justify-center">
       <p className="font-onest text-[16px] lg:text-[18px] font-medium leading-[100%] tracking-[-0.03em] text-[#021933]">
         {text}
       </p>

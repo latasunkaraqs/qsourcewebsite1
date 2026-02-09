@@ -22,7 +22,7 @@ const WhatWeDoSection = () => {
         </p>
       </div>
 
-      <div className="flex flex-wrap gap-11 w-full pt-8 lg:py-18 items-center justify-center">
+      <div className="flex flex-wrap gap-11 w-full pt-5 lg:pb-30 items-center justify-center">
         {solutions.map((solution, index) => {
           return (
             <SolutionCard
