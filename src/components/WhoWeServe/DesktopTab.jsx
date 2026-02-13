@@ -96,20 +96,20 @@ const DesktopTab = ({ tabs }) => {
           <div
             key={tab.id}
             ref={(el) => (panelsRef.current[i] = el)}
-            className="absolute inset-0 w-full h-[480px] bg-cover bg-center opacity-0"
             style={{ backgroundImage: `url(${tab.backgroundImage})` }}
+            className="absolute inset-0 w-full h-[480px] bg-cover bg-center opacity-0"
           >
-            <div className="w-full h-full bg-black/35 pt-[40px] px-6 lg:px-[65px] flex flex-col">
+            <div className="w-full h-full bg-black/25 pt-[40px] px-6 lg:px-[65px] flex flex-col">
               {/* Top Content — fixed height + scroll */}
               <div className="h-[160px] overflow-hidden pr-2">
-                <p className="content-text font-onest text-[26px] lg:text-[32px] xl:text-[37px] font-medium leading-[130%] tracking-[-0.05em] text-white">
+                <p className="content-text font-onest text-[26px] lg:text-[32px] xl:text-[37px] font-medium leading-[130%] tracking-normal text-white">
                   {tab.content}
                 </p>
               </div>
 
               {/* Outcomes Section — fixed anchor */}
               <div className="mt-12 flex-1 flex flex-col min-h-0">
-                <p className="mb-6 font-onest text-[25px] font-medium leading-[100%] tracking-[-0.03em] text-white">
+                <p className="mb-6 font-onest text-[25px] font-medium leading-[115%] tracking-normal text-white">
                   Key Outcomes
                 </p>
 
@@ -140,7 +140,7 @@ const DesktopTab = ({ tabs }) => {
               />
 
               <span
-                className={`max-w-[190px] font-onest text-[21px] font-medium leading-[120%] tracking-[-0.03em] transition-colors duration-300 ${
+                className={`max-w-[200px] font-onest text-[21px] font-medium leading-[115%] tracking-normal transition-colors duration-300 ${
                   isActive ? "text-[#0085F6]" : "text-[#021933]/40"
                 }`}
               >

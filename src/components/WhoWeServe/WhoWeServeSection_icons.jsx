@@ -62,11 +62,11 @@ const WhoWeServeSection = () => {
 
   return (
     <div className="flex flex-col py-20 px-4 lg:px-20 items-center justify-center gap-5">
-      <h2 className="font-onest text-[60px] font-bold leading-[100%] tracking-[-0.03em] text-[#021933]">
+      <h2 className="font-onest text-[60px] font-bold leading-[115%] tracking-normal text-[#021933]">
         Who We <span className="text-[#0085F6]">Serve</span>
       </h2>
 
-      <p className="font-onest text-[20px] font-medium leading-[130%] tracking-[-0.05em] text-[#021933]">
+      <p className="font-onest text-[20px] font-medium leading-[130%] tracking-normal text-[#021933]">
         Deep industry expertise across enterprise, public sector and regulated
         environments.
       </p>
@@ -81,11 +81,11 @@ const WhoWeServeSection = () => {
               className="absolute inset-0 w-full h-[511px] pt-[95px] px-[65px] bg-cover bg-center opacity-0"
               style={{ backgroundImage: `url(${tab.backgroundImage})` }}
             >
-              <p className="content-text font-onest text-[37px] font-medium leading-[130%] tracking-[-0.05em] text-white">
+              <p className="content-text font-onest text-[37px] font-medium leading-[130%] tracking-normal text-white">
                 {tab.content}
               </p>
 
-              <p className="content-sub mt-18 mb-8 font-onest text-[25px] font-medium leading-[100%] tracking-[-0.03em] text-white">
+              <p className="content-sub mt-18 mb-8 font-onest text-[25px] font-medium leading-[115%] tracking-normal text-white">
                 Key Outcomes
               </p>
 
@@ -114,7 +114,7 @@ const WhoWeServeSection = () => {
                 />
 
                 <span
-                  className={`font-onest text-[21px] font-medium leading-[120%] tracking-[-0.03em] transition-colors duration-300 ${
+                  className={`font-onest text-[21px] font-medium leading-[115%] tracking-normal transition-colors duration-300 ${
                     isActive ? "text-[#0085F6]" : "text-[#021933]/40"
                   }`}
                 >

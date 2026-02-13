@@ -24,7 +24,7 @@ function MobileAccordion({ tabs }) {
               className="w-full text-left px-5 py-4 bg-white flex justify-between items-center"
             >
               <span
-                className={`font-onest text-[18px] font-medium leading-[120%] tracking-[-0.03em] ${isOpen ? "text-[#0085F6]" : "text-[#021933]/40"} `}
+                className={`font-onest text-[18px] font-medium leading-[115%] tracking-normal ${isOpen ? "text-[#0085F6]" : "text-[#021933]/40"} `}
               >
                 {tab.label}
               </span>

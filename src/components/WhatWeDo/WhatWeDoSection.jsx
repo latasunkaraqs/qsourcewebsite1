@@ -8,13 +8,13 @@ import solutionImg5 from "../../assets/solution-5.svg";
 
 const WhatWeDoSection = () => {
   return (
-    <div className="max-w-[1440px] mx-auto flex flex-col py-10 md:py-15 items-center justify-center gap-5 px-6 md:px-10 ">
+    <div className="max-w-[1440px] mx-auto flex flex-col py-10 md:py-15 items-center justify-center gap-5 px-6 md:px-10">
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-[2fr_3fr] items-center">
-        <h2 className="font-onest text-[40px] md:text-[56px] lg:text-[60px] font-bold leading-[100%] tracking-[-0.03em] text-[#021933] text-center lg:text-start">
+        <h2 className="font-onest text-[40px] md:text-[56px] lg:text-[60px] font-bold leading-[115%] tracking-normal text-[#021933] text-center lg:text-start">
           What We <span className="text-[#0085F6]">Do</span>
         </h2>
 
-        <p className="font-onest text-[20px] font-medium leading-[130%] tracking-[-0.05em] text-[#021933] text-center lg:text-start">
+        <p className="font-onest text-[20px] font-medium leading-[130%] tracking-normal text-[#021933] text-center lg:text-start">
           Deliver end-to-end technology capabilities that support enterprise
           change, operational reliability, and sustained performance. Each
           capability can be engaged independently or delivered as part of a

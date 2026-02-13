@@ -25,7 +25,7 @@ const Footer = () => {
     };
   }, []);
   return (
-    <footer className="relative min-h-[399px] bg-[url('src/assets/footerbg.png')] bg-cover">
+    <footer className="relative min-h-[399px] bg-[url('/footerbg.png')] bg-cover">
       {/* Go to Top*/}
       {showTopArrow && (
         <img
@@ -40,7 +40,7 @@ const Footer = () => {
         {/* Top footer content wrapper — responsive layout */}
         <div className="w-full pt-[38px] pb-[72px] flex flex-col md:flex-row items-start">
           {/* Left section — Company branding + description */}
-          <div className="w-full md:w-[40%] pt-8 font-onest font-medium text-[16px] leading-[130%] tracking-[-0.03em] text-[#021933] flex items-center justify-center md:justify-start md:items-start">
+          <div className="w-full md:w-[40%] pt-8 font-onest font-medium text-[16px] leading-[130%] tracking-normal text-[#021933] flex items-center justify-center md:justify-start md:items-start">
             <img src={footerLogo} alt="Qsource" className="h-[90px]" />
             {/* <p className="mt-2 text-center md:text-start">
               Transform your challenges into triumphs
@@ -52,7 +52,7 @@ const Footer = () => {
           </div>
 
           {/* Middle section — Contact info + social media */}
-          <div className="w-full pt-10 md:w-[30%] font-onest font-medium text-[16px] leading-[130%] tracking-[-0.03em] text-[#021933] flex flex-col gap-4 justify-center items-center md:items-start">
+          <div className="w-full pt-10 md:w-[30%] font-onest font-medium text-[16px] leading-[130%] tracking-normal text-[#021933] flex flex-col gap-4 justify-center items-center md:items-start">
             <p className="font-bold">Connect with us:</p>
             <div className="space-y-3">
               <div className="flex items-start justify-center md:justify-start gap-2">
@@ -132,7 +132,7 @@ const Footer = () => {
           </div>
 
           {/* Right section — Office addresses */}
-          <div className="w-full pt-10 md:w-[30%] font-onest font-medium text-[16px] leading-[130%] tracking-[-0.03em] text-[#021933] flex flex-col gap-4 justify-center items-center md:items-start md:justify-start">
+          <div className="w-full pt-10 md:w-[30%] font-onest font-medium text-[16px] leading-[130%] tracking-normal text-[#021933] flex flex-col gap-4 justify-center items-center md:items-start md:justify-start">
             <p className="font-bold text-center md:text-start">USA</p>
             <p className="text-center md:text-start">
               17302 House & Hahl Rd , Suite #310

@@ -64,7 +64,7 @@ const ValuesSection = () => {
       className="w-full min-h-[700px] px-20 py-30 bg-[url('src/assets/valuesbg.png')] bg-cover bg-bottom"
     >
       <div className="w-full flex flex-col justify-center items-center gap-20">
-        <h2 className="font-onest text-[60px] font-bold leading-[100%] tracking-[-0.03em] text-center text-white">
+        <h2 className="font-onest text-[60px] font-bold leading-[115%] tracking-normal text-center text-white">
           Built for Scale. Focused on Results.
         </h2>
         <div className="flex items-center justify-center gap-30">

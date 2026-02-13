@@ -11,7 +11,7 @@ const TrustSection = () => {
       {/* Partnership */}
       <div className="flex gap-2">
         <div className="flex flex-col gap-6 justify-start items-center">
-          <p className="font-onest text-[26px] font-medium leading-[100%] tracking-[-0.03em] text-center">
+          <p className="font-onest text-[26px] font-medium leading-[115%] tracking-normal text-center">
             Our Partnerships
           </p>
           <img
@@ -28,7 +28,7 @@ const TrustSection = () => {
       {/* Accreditations */}
       <div className="flex flex-col">
         <div className="flex flex-col gap-6 justify-center">
-          <p className="font-onest text-[26px] font-medium leading-[100%] tracking-[-0.03em] text-center">
+          <p className="font-onest text-[26px] font-medium leading-[115%] tracking-normal text-center">
             Our Accreditations
           </p>
           <div className="flex flex-wrap gap-15 md:gap-25 items-center justify-center">

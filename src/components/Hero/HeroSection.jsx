@@ -10,7 +10,7 @@ const HeroSection = () => {
   const svgWrapRef = useRef(null);
   const [open, setOpen] = useState(false);
 
-  const words = ["Relevant.", "Efficient.", "Scalable."];
+  const words = ["Relevant.", "Efficient.", "Scalable.", "Secure."];
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(true);
 
@@ -92,7 +92,7 @@ const HeroSection = () => {
     <>
       <div className="max-w-[1440px] mx-auto grid lg:grid-cols-2 grid-cols-1 py-10 gap-10 lg:py-30 px-6 md:px-10 ">
         <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start">
-          <h1 className="font-onest text-[40px] md:text-[56px] lg:text-[71px] font-bold leading-[100%] tracking-[-0.03em] text-black text-center lg:text-start">
+          <h1 className="font-onest text-[40px] md:text-[56px] lg:text-[71px] font-bold leading-[115%] tracking-normal text-black text-center lg:text-start">
             Building Enterprise Technology That Remains{" "}
             <span
               className={`inline-block min-w-[160px] text-[#0085F6] transition-all duration-300 ${
@@ -109,7 +109,7 @@ const HeroSection = () => {
           <br />
           Technology */}
           </h1>
-          <p className="font-onest text-[19px] font-medium leading-[130%] tracking-[-0.05em] text-black mt-8 max-w-[540px] text-center lg:text-start">
+          <p className="font-onest text-[19px] font-medium leading-[130%] tracking-normal text-black mt-8 max-w-[540px] text-center lg:text-start">
             We design, modernize, and operate mission-critical systems using
             proven architectures, security-first practices, and measurable
             performance outcomes.

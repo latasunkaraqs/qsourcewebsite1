@@ -46,7 +46,7 @@ const NavMenu = () => {
       if (st) {
         gsap.to(window, {
           duration: 0,
-          scrollTo: st.end,
+          scrollTo: st.start +=91, // Replaced st.end with st.start
           ease: "power2.out",
           autoKill: false,
         });
@@ -181,9 +181,8 @@ const NavMenu = () => {
 
         <ul className="flex flex-col gap-6 navlinks">
           {navItems.map((item) => (
-            <li key={item.id}>
+            <li key={item.id} onClick={() => scrollToSection(`#${item.id}`)} className="cursor-pointer">
               <button
-                onClick={() => scrollToSection(`#${item.id}`)}
                 className={`text-left text-lg capitalize
                   ${
                     isHome && active === item.id

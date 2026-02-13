@@ -14,10 +14,10 @@ const SolutionCard = ({ image, title, description }) => {
     lg:group-hover:invert lg:group-hover:brightness-0 lg:group-hover:contrast-200
     group-active:invert group-active:brightness-0 group-active:contrast-200"
       />
-      <h3 className="font-onest h-[50px] text-[26px] font-medium leading-[100%] tracking-[-0.03em] text-[#021933] mt-8 text-center group-hover:text-white group-active:text-white transition-all duration-500">
+      <h3 className="font-onest h-[50px] text-[26px] font-medium leading-[115%] tracking-normal text-[#021933] mt-8 text-center group-hover:text-white group-active:text-white transition-all duration-500">
         {title}
       </h3>
-      <p className="font-onest text-[18px] font-medium leading-[130%] tracking-[-0.05em] text-[#021933] mt-6 text-center group-hover:text-white group-active:text-white transition-all duration-500">
+      <p className="font-onest text-[18px] font-medium leading-[130%] tracking-normal text-[#021933] mt-6 text-center group-hover:text-white group-active:text-white transition-all duration-500">
         {description}
       </p>
     </div>

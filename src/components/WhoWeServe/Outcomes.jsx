@@ -18,7 +18,7 @@ export const Outcome1 = () => {
           className="w-[55px] h-[55px]"
         />
       </div>
-      <p className="font-onest text-[20px] font-medium leading-[130%] tracking-[-0.03em] text-white text-center max-w-[131px]">
+      <p className="font-onest text-[20px] font-medium leading-[130%] tracking-normal text-white text-center max-w-[131px]">
         Oil & Gas
       </p>
     </div>
@@ -35,7 +35,7 @@ export const Outcome2 = () => {
           className="w-[56px] h-[56px]"
         />
       </div>
-      <p className="font-onest text-[20px] font-medium leading-[130%] tracking-[-0.03em] text-white text-center max-w-[131px]">
+      <p className="font-onest text-[20px] font-medium leading-[130%] tracking-normal text-white text-center max-w-[131px]">
         Energy & Utilities
       </p>
     </div>
@@ -52,7 +52,7 @@ export const Outcome3 = () => {
           className="w-[60px] h-[60px] -translate-y-1"
         />
       </div>
-      <p className="font-onest text-[20px] font-medium leading-[100%] tracking-[-0.03em] text-white text-center max-w-[131px]">
+      <p className="font-onest text-[20px] font-medium leading-[115%] tracking-normal text-white text-center max-w-[131px]">
         Manufacturing
       </p>
     </div>
@@ -69,7 +69,7 @@ export const Outcome4 = () => {
           className="w-[61px] h-[61px]"
         />
       </div>
-      <p className="font-onest text-[20px] font-medium leading-[100%] tracking-[-0.03em] text-white text-center max-w-[131px]">
+      <p className="font-onest text-[20px] font-medium leading-[115%] tracking-normal text-white text-center max-w-[131px]">
         Logistics
       </p>
     </div>
@@ -86,7 +86,7 @@ export const Outcome5 = () => {
           className="w-[60px] h-[60px] -translate-x-2.5"
         />
       </div>
-      <p className="font-onest text-[20px] font-medium leading-[100%] tracking-[-0.03em] text-white text-center max-w-[131px]">
+      <p className="font-onest text-[20px] font-medium leading-[115%] tracking-normal text-white text-center max-w-[131px]">
         Retail & E-commerce
       </p>
     </div>
@@ -103,7 +103,7 @@ export const Outcome6 = () => {
           className="w-[48px] h-[48px]"
         />
       </div>
-      <p className="font-onest text-[20px] font-medium leading-[100%] tracking-[-0.03em] text-white text-center max-w-[131px]">
+      <p className="font-onest text-[20px] font-medium leading-[115%] tracking-normal text-white text-center max-w-[131px]">
         Healthcare
       </p>
     </div>
@@ -120,7 +120,7 @@ export const Outcome7 = () => {
           className="w-[50px] h-[50px]"
         />
       </div>
-      <p className="font-onest text-[20px] font-medium leading-[100%] tracking-[-0.03em] text-white text-center max-w-[131px]">
+      <p className="font-onest text-[20px] font-medium leading-[115%] tracking-normal text-white text-center max-w-[131px]">
         Banking Financial Services
       </p>
     </div>
@@ -137,7 +137,7 @@ export const Outcome8 = () => {
           className="w-[60px] h-[60px] translate-x-1"
         />
       </div>
-      <p className="font-onest text-[20px] font-medium leading-[100%] tracking-[-0.03em] text-white text-center max-w-[131px]">
+      <p className="font-onest text-[20px] font-medium leading-[115%] tracking-normal text-white text-center max-w-[131px]">
         Tele communications
       </p>
     </div>
@@ -147,7 +147,7 @@ export const Outcome8 = () => {
 export const Outcome = ({ text }) => {
   return (
     <div className="px-4 py-2 md:px-[19px] md:py-[16px] bg-white rounded-full flex items-center justify-center">
-      <p className="font-onest text-[16px] lg:text-[18px] font-medium leading-[100%] tracking-[-0.03em] text-[#021933]">
+      <p className="font-onest text-[16px] lg:text-[18px] font-medium leading-[115%] tracking-normal text-[#021933]">
         {text}
       </p>
     </div>

@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const WhatWeOfferSection = () => {
   const sectionRef = useRef(null);
   const cardsRef = useRef([]);
-  const NAV_HEIGHT = 91; // Set this to zero for non-sticky navbar
+  const NAV_HEIGHT = 391; // Set this to zero for non-sticky navbar
 
   const addToRefs = (el) => {
     if (!el) return;
@@ -31,8 +31,9 @@ const WhatWeOfferSection = () => {
           trigger: sectionRef.current,
           start: `top-=${NAV_HEIGHT} top`,
           end: "+=1200",
-          scrub: true, // Removed due to Anchor Jumps
-          pin: true, // Removed due to Anchor Jumps
+          // scrub: true, // Removed due to Anchor Jumps
+          // pin: true, // Removed due to Anchor Jumps
+          toggleActions: "play none none reverse",
         },
       });
     }, sectionRef);
@@ -45,11 +46,11 @@ const WhatWeOfferSection = () => {
       ref={sectionRef}
       className="max-w-[1440px] mx-auto flex flex-col py-8 items-center justify-center gap-5 px-6 md:px-10 "
     >
-      <h2 className="font-onest text-[40px] md:text-[56px] lg:text-[60px] font-bold leading-[100%] tracking-[-0.03em] text-[#021933] text-center">
+      <h2 className="font-onest text-[40px] md:text-[56px] lg:text-[60px] font-bold leading-[115%] tracking-normal text-[#021933] text-center">
         What We <span className="text-[#0085F6]">Offer</span>
       </h2>
 
-      <p className="font-onest text-[20px] font-medium leading-[130%] tracking-[-0.05em] text-[#021933] max-w-[90%] text-center">
+      <p className="font-onest text-[20px] font-medium leading-[130%] tracking-normal text-[#021933] max-w-[90%] text-center">
         Enterprise solutions focused on addressing complex operational and
         industry-specific challenges through proven patterns and deep domain
         context. Each solution is structured to fit within existing
@@ -122,10 +123,10 @@ const services = [
       "Asset-Intensive Operations Enablement",
       "Production & Utilization Analytics",
       "Asset Lifecycle Intelligence",
-      "Regulatory & Compliance Management",
-      "HSSE & Safety Analytics",
-      "Industry Data Models",
-      "Industry Decision Dashboards",
+      // "Regulatory & Compliance Management",
+      // "HSSE & Safety Analytics",
+      // "Industry Data Models",
+      // "Industry Decision Dashboards",
     ],
   },
   {

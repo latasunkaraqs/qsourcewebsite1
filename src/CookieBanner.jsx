@@ -51,7 +51,7 @@ export default function CookieBanner() {
           </p>
         </div>
 
-        <div className="flex-1 flex gap-3 justify-end">
+        <div className="flex-1 flex gap-3 justify-center md:justify-end">
           <button
             onClick={acceptAll}
             className="bg-green-600/70 hover:bg-green-700 px-4 py-2 rounded-lg text-sm font-medium"
